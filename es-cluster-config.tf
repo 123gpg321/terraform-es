@@ -1,8 +1,8 @@
 #Authenticate to AWS provider
 
 provider "aws" {
-    access_key = "AKIAJ----------"
-    secret_key = "BaFWAjBp------------------------------"
+    access_key = "AKIAJ46----------"
+    secret_key = "BaFWAjBpb8+J61AO---------------------------"
     region = "us-east-1"
 }
 
@@ -10,7 +10,8 @@ provider "aws" {
 
 resource "aws_instance" "es-node-1" {
     ami = "ami-0d4cfd66"
-    key_name = "admin-key-pair"
+    key_name = "id_rsa"
+    security_groups = ["georgi-es-group"]
     instance_type = "t2.micro"
     tags {
         Owner = "Georgi"
@@ -20,7 +21,8 @@ resource "aws_instance" "es-node-1" {
 
 resource "aws_instance" "es-node-2" {
     ami = "ami-0d4cfd66"
-    key_name = "admin-key-pair"
+    key_name = "id_rsa"
+    security_groups = ["georgi-es-group"]
     instance_type = "t2.micro"
     tags {
         Owner = "Georgi"
@@ -30,7 +32,8 @@ resource "aws_instance" "es-node-2" {
 
 resource "aws_instance" "es-node-3" {
     ami = "ami-0d4cfd66"
-    key_name = "admin-key-pair"
+    key_name = "id_rsa"
+    security_groups = ["georgi-es-group"]
     instance_type = "t2.micro"
     tags {
         Owner = "Georgi"
