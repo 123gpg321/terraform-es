@@ -1,8 +1,8 @@
 #Authenticate to AWS provider
 
 provider "aws" {
-    access_key = "AKIA-----------------"
-    secret_key = "BaFWAjBpb8+J-----------------------------"
+    access_key = "AKIAJ----------"
+    secret_key = "BaFWAjBp------------------------------"
     region = "us-east-1"
 }
 
@@ -10,6 +10,7 @@ provider "aws" {
 
 resource "aws_instance" "es-node-1" {
     ami = "ami-0d4cfd66"
+    key_name = "admin-key-pair"
     instance_type = "t2.micro"
     tags {
         Owner = "Georgi"
@@ -19,6 +20,7 @@ resource "aws_instance" "es-node-1" {
 
 resource "aws_instance" "es-node-2" {
     ami = "ami-0d4cfd66"
+    key_name = "admin-key-pair"
     instance_type = "t2.micro"
     tags {
         Owner = "Georgi"
@@ -28,6 +30,7 @@ resource "aws_instance" "es-node-2" {
 
 resource "aws_instance" "es-node-3" {
     ami = "ami-0d4cfd66"
+    key_name = "admin-key-pair"
     instance_type = "t2.micro"
     tags {
         Owner = "Georgi"
@@ -41,7 +44,7 @@ resource "aws_elb" "elasticsearch-loadbalancer" {
   name = "lb-es"
   availability_zones = [
     "us-east-1a",
-    "us-east-1a",
+    "us-east-1b",
     "us-east-1d"
   ]
 
