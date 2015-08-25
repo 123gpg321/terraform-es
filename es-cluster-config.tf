@@ -1,16 +1,16 @@
 #Authenticate to AWS provider
 
 provider "aws" {
-    access_key = "AKIAJ-----"
-    secret_key = "kdVl9NybirYXOomr1Y+------------------"
+    access_key = "AKIA-----------------"
+    secret_key = "BaFWAjBpb8+J-----------------------------"
     region = "us-east-1"
 }
 
 #Create 3 EC2 Instances for ElasticSearch cluster nodes
 
 resource "aws_instance" "es-node-1" {
-    ami = "ami-d5c5d1e5"
-    instance_type = "m1.large"
+    ami = "ami-0d4cfd66"
+    instance_type = "t2.micro"
     tags {
         Owner = "Georgi"
 	Environment = "Production"
@@ -18,8 +18,8 @@ resource "aws_instance" "es-node-1" {
 }
 
 resource "aws_instance" "es-node-2" {
-    ami = "ami-d5c5d1e5"
-    instance_type = "m1.large"
+    ami = "ami-0d4cfd66"
+    instance_type = "t2.micro"
     tags {
         Owner = "Georgi"
 	Environment = "Production"
@@ -27,8 +27,8 @@ resource "aws_instance" "es-node-2" {
 }
 
 resource "aws_instance" "es-node-3" {
-    ami = "ami-d5c5d1e5"
-    instance_type = "m1.large"
+    ami = "ami-0d4cfd66"
+    instance_type = "t2.micro"
     tags {
         Owner = "Georgi"
 	Environment = "Production"
@@ -37,7 +37,7 @@ resource "aws_instance" "es-node-3" {
 
 # Create new load balancer for EC2 ElasticSearch Cluster
 
-resource "aws-elb" "lb-elasticsearch" {
+resource "aws_elb" "elasticsearch-loadbalancer" {
   name = "lb-es"
   availability_zones = [
     "us-east-1a",
