@@ -1,7 +1,7 @@
-# Description #
+## Description ##
 Streamline and automate the process of creating automated infrastructure from scratch. 
 
-# Requirements #
+## Requirements ##
  
 * Ubuntu Linux Knowledge
 * AWS, LoadBalancer, EC2 Instances, Security groups and SSH auth key certs
@@ -56,12 +56,15 @@ The security group option is important otherwise the plugin will cause Elasticse
 ## Live Demo  ##
 
 ElasticSearch Cluster Node 1
+
 `curl -XGET http://ec2-52-3-153-248.compute-1.amazonaws.com:9200`
 
 ElasticSearch Cluster Node 2
+
 `curl -XGET http://ec2-52-6-31-9.compute-1.amazonaws.com:9200`
 
 ElasticSearch Cluster Node 3
+
 `curl -XGET http://ec2-52-20-144-30.compute-1.amazonaws.com:9200`
 
 
